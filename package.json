@@ -1,6 +1,6 @@
 {
   "name": "form-render-excel",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
@@ -11,6 +11,11 @@
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage"
+  },
+  "group": "form-render",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:form-render/form-render-excel.git"
   },
   "author": {
     "name": "mzl980425",
