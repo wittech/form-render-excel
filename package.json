@@ -12,11 +12,6 @@
     "test": "umi-test",
     "test:coverage": "umi-test --coverage"
   },
-  "group": "form-render",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:form-render/form-render-excel.git"
-  },
   "author": {
     "name": "mzl980425",
     "email": "1198079622@qq.com"
@@ -36,16 +31,12 @@
     ]
   },
   "dependencies": {
-    "antd": "^4.7.3",
     "lodash": "^4.17.20",
-    "react": "^16.12.0",
     "xlsx": "^0.16.8"
   },
   "peerDependencies": {
     "antd": "^4.7.3",
-    "lodash": "^4.17.20",
-    "react": "^16.12.0",
-    "xlsx": "^0.16.8"
+    "react": "^16.12.0"
   },
   "devDependencies": {
     "@umijs/test": "^3.0.5",
