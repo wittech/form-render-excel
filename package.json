@@ -1,6 +1,6 @@
 {
   "name": "form-render-excel",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
