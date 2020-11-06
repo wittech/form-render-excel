@@ -1,4 +1,4 @@
-## 开始使用
+## 复杂样例
 
 试试看点击 `Excel 导出` 按钮，在下载的 xlsx 文件中填上几行，然后复制下表中内容，点击 `Excel 导入` 按钮，粘贴进去点确定~
 
@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 import 'antd/dist/antd.css';
 import FR from 'form-render/lib/antd';
 import HOC from 'form-render-excel';
-import schema from './schema1.json';
+import schema from './schema2.json';
 
 const NFR = HOC(FR);
 
