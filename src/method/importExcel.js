@@ -10,12 +10,14 @@ export default (arrayData, onChange, schema) => {
     icon: null,
     maskClosable: true,
     title: (
-      <div style={{
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'flex-end',
-      }}>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'flex-end',
+        }}
+      >
         Excel 导入
         <a
           href=""
@@ -27,7 +29,14 @@ export default (arrayData, onChange, schema) => {
         </a>
       </div>
     ),
-    content: (<Input.TextArea placeholder="去掉表头的 Excel 数据复制下来，然后在本输入框里粘贴即可。" onChange={event => { excelText = event.target.value || '' }} />),
+    content: (
+      <Input.TextArea
+        placeholder="去掉表头的 Excel 数据复制下来，然后在本输入框里粘贴即可。"
+        onChange={event => {
+          excelText = event.target.value || '';
+        }}
+      />
+    ),
     okText: '确定',
     cancelText: '取消',
     onOk() {
@@ -38,23 +47,43 @@ export default (arrayData, onChange, schema) => {
         const prop = flatProp[keyPath];
         if (prop.type.toLowerCase() === 'number') {
           // 数字类型的，从字符串转成数字
-          sheetData.forEach(lineArr => { lineArr[index] = Number(lineArr[index]) || lineArr[index]; });
+          sheetData.forEach(lineArr => {
+            lineArr[index] = Number(lineArr[index]) || lineArr[index];
+          });
         } else if (prop.type.toLowerCase() === 'boolean') {
           // 布尔类型的，从字符串转成布尔
-          sheetData.forEach(lineArr => { lineArr[index] = toBoolean(lineArr[index]); });
+          sheetData.forEach(lineArr => {
+            lineArr[index] = toBoolean(lineArr[index]);
+          });
         } else if (prop.type.toLowerCase() === 'range') {
           // range类型的，从字符串转成数组
-          sheetData.forEach(lineArr => { lineArr[index] = String(lineArr[index]).split('_'); });
+          sheetData.forEach(lineArr => {
+            lineArr[index] = String(lineArr[index]).split('_');
+          });
         } else if (prop.enum) {
           // 有 enum 的，可能是单选可能是多选
           if (prop.type.toLowerCase() === 'array') {
-            sheetData.forEach(lineArr => { lineArr[index] = enumNamesToEnum(lineArr[index].split('_'), prop.enum, prop.enumNames); });
+            sheetData.forEach(lineArr => {
+              lineArr[index] = enumNamesToEnum(
+                String(lineArr[index]).split('_'),
+                prop.enum,
+                prop.enumNames,
+              );
+            });
           } else {
-            sheetData.forEach(lineArr => { lineArr[index] = enumNamesToEnum(lineArr[index], prop.enum, prop.enumNames); });
+            sheetData.forEach(lineArr => {
+              lineArr[index] = enumNamesToEnum(
+                lineArr[index],
+                prop.enum,
+                prop.enumNames,
+              );
+            });
           }
         } else if (prop.type.toLowerCase() === 'array') {
           // 复杂数组类型，直接清空
-          sheetData.forEach(lineArr => { lineArr[index] = []; });
+          sheetData.forEach(lineArr => {
+            lineArr[index] = [];
+          });
         }
       });
       const formData = sheetData.map(lineArr => {
@@ -67,5 +96,4 @@ export default (arrayData, onChange, schema) => {
       onChange(formData);
     },
   });
-  
-}
+};
