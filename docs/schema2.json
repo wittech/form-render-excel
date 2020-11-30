@@ -5,7 +5,8 @@
       "title": "人员名单",
       "type": "array",
       "ui:options": {
-        "foldable": true
+        "foldable": true,
+        "useExcel": true
       },
       "items": {
         "type": "object",
@@ -87,8 +88,7 @@
           "image": {
             "title": "图片展示",
             "type": "string",
-            "format": "image",
-            "ui:options": {}
+            "format": "image"
           },
           "color": {
             "title": "颜色选择",
@@ -103,12 +103,10 @@
               "properties": {
                 "input": {
                   "title": "数组_随便写写",
-                  "type": "string",
-                  "ui:options": {}
+                  "type": "string"
                 }
               }
-            },
-            "ui:options": {}
+            }
           },
           "obj": {
             "title": "对象",
@@ -156,8 +154,7 @@
           },
           "remark": {
             "title": "备注",
-            "type": "string",
-            "ui:options": {}
+            "type": "string"
           }
         }
       }

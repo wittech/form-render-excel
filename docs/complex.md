@@ -4,7 +4,6 @@
 
 ```jsx
 import React, { useState } from 'react';
-import 'antd/dist/antd.css';
 import FR from 'form-render/lib/antd';
 import HOC from 'form-render-excel';
 import schema from './schema2.json';

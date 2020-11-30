@@ -29,6 +29,36 @@ export default () => {
 };
 ```
 
+在 schema 中对应的数组的 `ui:options` 里使用 `useExcel` 注明需要使用 excel 功能：
+
+```json
+{
+  "type": "object",
+  "properties": {
+    "arrDemo": {
+      "title": "搬砖统计",
+      "type": "array",
+      "ui:options": {
+        "useExcel": true
+      },
+      "items": {
+        "type": "object",
+        "properties": {
+          "year": {
+            "title": "年份",
+            "type": "number"
+          },
+          "value": {
+            "title": "搬砖量",
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}
+```
+
 ## 功能
 
 支持复杂的数组多层套对象的导入导出，可以 clone 下代码，跑起来试玩一下~

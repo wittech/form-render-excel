@@ -5,7 +5,8 @@
       "title": "搬砖统计",
       "type": "array",
       "ui:options": {
-        "foldable": true
+        "foldable": true,
+        "useExcel": true
       },
       "items": {
         "type": "object",
